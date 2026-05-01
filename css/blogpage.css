@@ -1,7 +1,5 @@
-/*Off-screen-menu*/
 .off-screen-menu {
     background-color: rgb(34, 37, 49);
-    /* background-color: chocolate; */
     height: 100vh;
     width: 100%;
     max-width: 450px;
@@ -12,7 +10,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: left;
     font-size: 2.5rem;
     transition: .3s ease;
     font-family: Arial, Helvetica, sans-serif;
@@ -22,10 +19,27 @@
     right: 0;
 }
 
+.off-screen-menu a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.off-screen-menu li {
+    list-style: none;
+}
+
 nav {
     padding: 1rem;
     display: flex;
     background-color: rgb(34, 37, 49);
+}
+
+.main_nav ul li {
+    display: inline;
+    margin-right: 40px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .ham-menu {
@@ -38,11 +52,9 @@ nav {
 .ham-menu span {
     height: 5px;
     width: 100%;
-    /* background-color: #6f86ff; */
     background-color: #ffffff;
     border-radius: 25px;
     position: absolute;
-    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: .3s ease;
@@ -52,11 +64,15 @@ nav {
     top: 25%;
 }
 
+.ham-menu span:nth-child(2) {
+    top: 50%;
+}
+
 .ham-menu span:nth-child(3) {
     top: 75%;
 }
 
-.ham-menu.active span:nth-child(1){
+.ham-menu.active span:nth-child(1) {
     top: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
@@ -70,43 +86,79 @@ nav {
     transform: translate(-50%, 50%) rotate(-45deg);
 }
 
-/*I added these extras to it*/
-.off-screen-menu a:link {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-/*I added this to it*/
-.off-screen-menu li {
-    list-style-type: none;
-}
-
-
-.main_nav ul li {
-    text-decoration: none;
-    display: inline;
-    margin-right: 50px;
-    padding: 0px;
-    height: 45px;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 150%;
-}
-
-.main_nav ul {
-    color: white;
+/* Header fix */
+#toparea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
 }
 
 #toparea img {
-    width: 200px;
-    padding-left: 40px;
-    padding-top: 18px;
-    padding-bottom: 40px;
+    width: 180px;
 }
 
 #toparea .toptext {
-    color: black;
-    margin: 0px;
-    padding-left: 400px;
-    font-size: 400%;
+    font-size: 2rem;
+    font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Company profile */
+.company_profile {
+    padding: 40px;
+}
+
+.company_profile h1 {
+    margin-bottom: 20px;
+    color: rgb(34, 37, 49);
+}
+
+.company_profile #pp1 {
+    background-color: cadetblue;
+    padding: 25px;
+    border-radius: 10px;
+    color: white;
+    line-height: 1.6;
+}
+
+/* Grid layout */
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* Cards */
+.grid_container div {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.grid_container div:hover {
+    transform: translateY(-5px);
+}
+
+/* Images */
+.grid_container img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Text */
+.grid_container h2 {
+    margin-top: 15px;
+    font-size: 1.3rem;
+}
+
+.grid_container p {
+    color: #666;
+    font-size: 0.95rem;
 }
